@@ -1,0 +1,59 @@
+To evaluate each class based on the given criteria, we will label them as either plus (+) or minus (-) for each OntoClean criterion:
+
+1. Rigidity (R):
+   - Location: -R
+   - Geographical Region: -R
+   - Amount of matter: -R
+   - Food: -R
+   - Physical Object: -R
+   - Fruit: -R
+   - Apple: +R
+   - Red apple: +R
+   - Red: +R
+   - Living Being: -R
+   - Animal: -R
+   - Lepidopteran: -R
+   - Caterpillar: -R
+   - Butterfly: -R
+   - Vertebrate: -R
+   - Person: -R
+   - Social entity: -R
+   - Country: -R
+   - Organization: -R
+   - Agent: -R
+   - Legal agent: -R
+   - Group: -R
+   - Group of people: -R
+
+2. Unity (UC):
+   - All classes: +UC (All classes have a clear concept of what is part of them and what is not.)
+
+3. Identity (IC):
+   - Location: -I
+   - Geographical Region: -I
+   - Amount of matter: -I
+   - Food: -I
+   - Physical Object: -I
+   - Fruit: -I
+   - Apple: +I
+   - Red apple: +I
+   - Red: +I
+   - Living Being: -I
+   - Animal: -I
+   - Lepidopteran: -I
+   - Caterpillar: -I
+   - Butterfly: -I
+   - Vertebrate: -I
+   - Person: -I
+   - Social entity: -I
+   - Country: -I
+   - Organization: -I
+   - Agent: -I
+   - Legal agent: -I
+   - Group: -I
+   - Group of people: -I
+
+4. Dependence (D):
+   - All classes: -D (None of the classes are dependent on each other in the given list.)
+
+Note: The labels are based on the provided descriptions of each criterion and may vary depending on how the concepts are defined in a specific context or ontology.
