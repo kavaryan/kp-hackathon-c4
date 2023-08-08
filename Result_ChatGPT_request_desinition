@@ -1,0 +1,34 @@
+Sure, let's assign the relevant OntoClean criteria to each class:
+
+1. Entity:
+   - Rigidity: +R (It is based on the notion of essence, and entities are necessarily instances of the concept "Entity" in all worlds and at all times.)
+   - Unity: +UC (The concept of "Entity" defines what is part of something and what is not.)
+   - Identity: +I (Instances of "Entity" can be identified as being the same at any time and in any world.)
+
+2. Location:
+   - Rigidity: +R (Locations are necessarily instances of the concept "Location" in all worlds and at all times.)
+   - Unity: +UC (The concept of "Location" defines what is part of a location and what is not.)
+   - Identity: -I (Identity is not crucial for locations as they can be identified without a strict identity criterion.)
+
+3. Geographical Region:
+   - Rigidity: +R (Geographical regions are necessarily instances of the concept "Geographical Region" in all worlds and at all times.)
+   - Unity: +UC (The concept of "Geographical Region" defines what is part of a geographical region and what is not.)
+   - Identity: -I (Identity is not crucial for geographical regions as they can be identified without a strict identity criterion.)
+
+4. Amount of Matter:
+   - Rigidity: +R (Amounts of matter are necessarily instances of the concept "Amount of Matter" in all worlds and at all times.)
+   - Unity: +UC (The concept of "Amount of Matter" defines what is part of an amount of matter and what is not.)
+   - Identity: -I (Identity is not crucial for amounts of matter as they can be identified without a strict identity criterion.)
+
+5. Food:
+   - Rigidity: +R (Foods are necessarily instances of the concept "Food" in all worlds and at all times.)
+   - Unity: +UC (The concept of "Food" defines what is part of a food item and what is not.)
+   - Identity: -I (Identity is not crucial for foods as they can be identified without a strict identity criterion.)
+
+So, the relevant OntoClean criteria for each class are as follows:
+
+- Entity: +R, +UC, +I
+- Location: +R, +UC, -I
+- Geographical Region: +R, +UC, -I
+- Amount of Matter: +R, +UC, -I
+- Food: +R, +UC, -I
