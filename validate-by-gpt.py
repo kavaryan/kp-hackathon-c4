@@ -2,61 +2,38 @@ import json
 import re
 import openai
 import matplotlib.pyplot as plt
+from tqdm import tqdm
 
 openai.api_key_path = 'openai_api_key.txt'  # Set your OpenAI API key here
 
-# Load the OpenAI API key
-openai.api_key = 'YOUR_OPENAI_API_KEY'
-
 META_LABELS = ['I', 'R', 'U', 'D']
-
-def parse_metalabels_str(s):
-    """ Parse a string representation of meta labels into a dictionary.
-
-    Example: '+I-D' --> {'I': '-I', 'D': '-D'}
-    """
-    ret = dict()
-    assert re.match(s, '(^[-|\+][IRUD])+$')
-    for i in range(1, len(s), 2):
-        ret[s[i].upper()] = s[i-1:i+1].upper()
-    return ret
-
+MODEL = 'gpt-3.5-turbo'
 
 # Read the jsonl file
-with open('file.jsonl', 'r') as f:
+class_names = []
+with open('tutorial-ontoclean-labels.jsonl', 'r') as f:
     lines = f.readlines()
-
-results = {label: [0, 0] for label in META_LABELS}  # Correct/Incorrect counts for each metalabel
+    for line in lines:
+        line_d = json.loads(line)
+        class_names.append(line_d['classname'])
 
 # Process each line
-for line in lines:
-    data = json.loads(line)
-    class_name = data['name']
-    metalabels = data['metalabels']
-    metalabels = parse_metalabels_str(metalabels)
-
+for class_name in tqdm(class_names):
     # Query ChatGPT
-    response = openai.Completion.create(
-      engine="davinci",
-      prompt=f"Provide OntoClean metalabels for the class '{class_name}':",
-      max_tokens=100
+    response = openai.ChatCompletion.create(
+        model=MODEL,
+        messages=[
+            {'role': 'system', 'content': 'You are a helpful assistant.'},
+            {'role': 'user', 'content': f'Provide OntoClean metalabels (Identity, Unity, Rigidity, Dependence, such as +I, -D, etc.) for the class "{class_name}":'},
+        ],
+        max_tokens=250,
+        temperature=0
     )
-    chatgpt_labels = response.choices[0].text.strip()
-
-    # Compare ChatGPT's response with the given metalabels
-    for label in META_LABELS:
-        expected = metalabels.get(label)
-        if expected and expected in chatgpt_labels:
-            results[label][0] += 1  # Correct
-        else:
-            results[label][1] += 1  # Incorrect
-
-# Plot the results
-fig, axs = plt.subplots(2, 2)
-labels = ['Correct', 'Incorrect']
-for idx, label in enumerate(META_LABELS):
-    ax = axs[idx//2, idx%2]
-    ax.pie(results[label], labels=labels, autopct='%1.1f%%')
-    ax.set_title(f'Metalabel {label}')
-
-plt.show()
+    
+    # chatgpt_labels = response.choices[0].text.strip()
+    pred_labels = response.choices[0]['message']['content']
+    print('='*20)
+    print(f'Class name: {class_name}')
+    print(f'Reference labels: {metalabels}')
+    print(f'{MODEL} output:', pred_labels)
+    print()
