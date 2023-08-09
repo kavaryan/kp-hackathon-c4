@@ -1,6 +1,7 @@
-To evaluate each class based on the given criteria, we will label them as either plus (+) or minus (-) for each OntoClean criterion:
+Sure, let's evaluate each class based on the given OntoClean criteria:
 
 1. Rigidity (R):
+   - entity: -R
    - Location: -R
    - Geographical Region: -R
    - Amount of matter: -R
@@ -26,9 +27,10 @@ To evaluate each class based on the given criteria, we will label them as either
    - Group of people: -R
 
 2. Unity (UC):
-   - All classes: +UC (All classes have a clear concept of what is part of them and what is not.)
+   - All classes: +UC
 
 3. Identity (IC):
+   - entity: -I
    - Location: -I
    - Geographical Region: -I
    - Amount of matter: -I
@@ -54,6 +56,6 @@ To evaluate each class based on the given criteria, we will label them as either
    - Group of people: -I
 
 4. Dependence (D):
-   - All classes: -D (None of the classes are dependent on each other in the given list.)
+   - All classes: -D
 
-Note: The labels are based on the provided descriptions of each criterion and may vary depending on how the concepts are defined in a specific context or ontology.
+Note: The labels are based on the provided OntoClean criteria descriptions and may vary depending on the specific definitions of the concepts in a given context or ontology.
